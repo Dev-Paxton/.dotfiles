@@ -108,32 +108,32 @@ function gitac() {
 	then
 		git commit -m "🎉 Initial commit"
 	
-	elif [[ $1 = Feature/* ]]
+	elif [[ $1 = Feat:* ]]
 	then
 		git commit -m "✨ $1"
 
-	elif [[ $1 = Bug/* ]]
+	elif [[ $1 = Bug:* ]]
 	then
 		git commit -m "🐛 $1"
-	elif [[ $1 = Hotfix/* ]]
+	elif [[ $1 = Hotfix:* ]]
 	then
 		git commit -m "🔥 $1"
-	elif [[ $1 = Docs/* ]]
+	elif [[ $1 = Docs:* ]]
 	then
 		git commit -m "📚 $1"
 
-	elif [[ $1 = Perf/* ]]
+	elif [[ $1 = Perf:* ]]
 	then
 		git commit -m "🚀 $1"
 
-	elif [[ $1 = Test/* ]]
+	elif [[ $1 = Test:* ]]
 	then
 		git commit -m "🚨 $1"
 
 	elif [[ $1 = "Updated dependencies" ]]
 	then
 		git commit -m "⬆️ Updated dependencies"
-	elif [[ $1 = Refactor/* ]]
+	elif [[ $1 = Refactor:* ]]
 	then
 		git commit -m "📦 $1"
 
