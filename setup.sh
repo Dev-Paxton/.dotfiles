@@ -15,7 +15,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 cd .dotfiles
 
-echo $tmux_prefix
 if [ -n "$tmux_prefix" ]; then
     echo "unbind C-Space" >> .tmux.conf
     echo "set -g prefix $tmux_prefix" >> .tmux.conf
