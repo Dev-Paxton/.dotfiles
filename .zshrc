@@ -160,3 +160,8 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function ct() {
+    sed -i.bak "s/^ZSH_THEME=.*$/ZSH_THEME=\"$1\"/" ~/.zshrc
+    source ~/.zshrc
+}
