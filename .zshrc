@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 bindkey -s "^s" "~/scripts/"
-alias lxcl="sudo lxc-ls -f"
+alias lxcl="lxc-ls -f"
 
 function gitac() {
 	git add -A
@@ -152,7 +152,7 @@ function gitac() {
 }
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
+	exec tmux new-session -A -s main
 fi
 
 PATH=$PATH:~/.local/bin
@@ -165,3 +165,5 @@ function ct() {
     sed -i.bak "s/^ZSH_THEME=.*$/ZSH_THEME=\"$1\"/" ~/.zshrc
     source ~/.zshrc
 }
+
+complete -W "$(lxc-ls --line)" lxc-connect
