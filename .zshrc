@@ -101,8 +101,15 @@ source $ZSH/oh-my-zsh.sh
 bindkey -s "^s" "~/scripts/"
 alias lxcl="lxc-ls -f"
 
-function gitac() {
-	git add -A
+unalias gc
+function gc() {
+	if [[ $2 != "" ]]; then
+		echo "Commit message:" $1
+		read "?Continue? [y/(n)] " c
+		if [[ $c = "y" ]]; then
+		else return
+		fi
+	fi
 
 	if [[ $1 = "Initial commit" ]]
 	then
@@ -115,7 +122,7 @@ function gitac() {
 	elif [[ $1 = Bug:* ]]
 	then
 		git commit -m "🐛 $1"
-	elif [[ $1 = Hotfix:* ]]
+	elif [[ $1 = Fix:* ]]
 	then
 		git commit -m "🔥 $1"
 	elif [[ $1 = Docs:* ]]
