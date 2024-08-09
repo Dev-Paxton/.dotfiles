@@ -12,3 +12,9 @@ cd ~
 git clone https://github.com/Dev-Paxton/.dotfiles.git
 ./.dotfiles/setup.sh
 ```
+## Update
+```bash
+cd ~/.dotfiles
+git pull
+source ~/.zshrc
+```
