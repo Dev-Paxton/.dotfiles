@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 bindkey -s "^s" "~/scripts/"
 alias lxcl="lxc-ls -f"
+alias cpc="xclip -sel c < $1"
 
 unalias gc
 function gc() {
