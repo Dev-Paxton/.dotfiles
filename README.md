@@ -3,7 +3,6 @@
 - [Zsh](https://www.zsh.org/)
 - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [Tmux](https://github.com/tmux/tmux)
-- [Neovim](https://neovim.io/)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 
 ## Setup

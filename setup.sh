@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 read -p "Tmux prefix [C-Space]: " tmux_prefix
 
-sudo apt install zsh curl git stow tmux neovim -y
+sudo apt install zsh curl git stow tmux -y
 
 chsh -s $(which zsh)
 
