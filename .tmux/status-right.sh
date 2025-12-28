@@ -40,4 +40,4 @@ fi
 path=$(echo $1 | sed "s!/home/$USER!~!")
 working_dir="$icon_color 󰉋 $text_color $path"
 
-echo $working_dir $git $session $machine" "
+echo $working_dir $git $session $machine""

@@ -74,6 +74,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.profile
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -98,9 +100,10 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-bindkey -s "^s" "~/scripts/"
 alias lxcl="lxc-ls -f"
 alias cpc="xclip -sel c < $1"
+alias op='xdg-open $1 >/dev/null 2>&1'
+alias up='uptime -p'
 
 unalias gc
 function gc() {
@@ -175,3 +178,5 @@ function ct() {
 }
 
 complete -W "$(lxc-ls --line)" lxc-connect
+
+~/Dokumente/LXCSetup/setup/assets/motd.sh
