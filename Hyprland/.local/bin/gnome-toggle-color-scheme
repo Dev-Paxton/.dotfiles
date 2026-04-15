@@ -1,0 +1,10 @@
+#!/bin/bash
+# Toggles gnomes color-scheme
+
+scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+
+if [[ $scheme == "'prefer-dark'" || $scheme == "'default'" ]];then
+	gsettings set org.gnome.desktop.interface color-scheme prefer-light
+elif [[ $scheme == "'prefer-light'" ]];then
+	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+fi
