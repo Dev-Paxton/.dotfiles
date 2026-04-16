@@ -99,7 +99,6 @@ alias -g NO='>/dev/null'
 alias -g NE='2>/dev/null'
 alias -g NOE='>/dev/null 2>&1'
 alias -g C='| wl-copy'
-alias search='grep -Ri -e "$1" $2'
 source <(fzf --zsh)
 alias ls='eza --icons=auto'
 eval "$(zoxide init --cmd cd zsh)"
@@ -130,3 +129,6 @@ function ct() {
 	exec zsh
 }
 
+function search() {
+	grep -Ri -e "$1" "$2"
+}
