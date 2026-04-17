@@ -102,6 +102,8 @@ alias -g C='| wl-copy'
 source <(fzf --zsh)
 alias ls='eza --icons=auto'
 eval "$(zoxide init --cmd cd zsh)"
+alias vim='nvim'
+alias vimm='/usr/bin/vim'
 
 bindkey -s '^v' 'vim-fzf\n'
 function vim-fzf() {
