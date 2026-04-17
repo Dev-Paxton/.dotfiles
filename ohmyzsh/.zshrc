@@ -38,7 +38,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -134,3 +134,15 @@ function ct() {
 function search() {
 	grep -Ri -e "$1" "$2"
 }
+
+function _set_kitty_tab_title() {
+	local title="${PWD/#$HOME/~}"
+	if git rev-parse --is-inside-work-tree &>/dev/null; then
+		local branch=$(git branch --show-current 2>/dev/null)
+		local dirty=""
+		[[ -n $(git status --porcelain 2>/dev/null) ]] && dirty="*"
+		title="${title} (${branch}${dirty})"
+	fi
+	kitty @ set-tab-title "$title"
+}
+precmd_functions+=(_set_kitty_tab_title)
