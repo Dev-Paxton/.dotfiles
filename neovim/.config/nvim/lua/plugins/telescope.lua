@@ -17,6 +17,7 @@ return {
     end,
     keys = {
         { '<leader>ff', '<cmd>Telescope find_files hidden=true<CR>', desc = 'Find files' },
+        { '<leader>fa', '<cmd>Telescope find_files hidden=true no_ignore=true<CR>', desc = 'Find all files (incl. gitignored)' },
         { '<leader>fg', '<cmd>Telescope live_grep<CR>', desc = 'Live grep' },
         { '<leader>fb', '<cmd>Telescope buffers<CR>', desc = 'Buffers' },
         { '<leader>fh', '<cmd>Telescope help_tags<CR>', desc = 'Help tags' },

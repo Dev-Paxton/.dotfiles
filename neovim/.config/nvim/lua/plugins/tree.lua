@@ -9,7 +9,9 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 	end,
 	config = function()
-		require('nvim-tree').setup()
+		require('nvim-tree').setup({
+			git = { ignore = false },
+		})
 	end,
 	keys = {
 		{ '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle file tree' }
