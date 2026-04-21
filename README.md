@@ -1,5 +1,7 @@
 # .dotfiles
 
+<img src="https://img.shields.io/badge/Version-2.0.0-blue?style=for-the-badge&labelColor=gray">
+
 Dotfiles for my Arch Linux Hyprland setup
 
 ## Components
