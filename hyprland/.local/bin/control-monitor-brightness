@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [[ $1 = "" ]];then
+	echo "$0 [Brightness (0-100)]"
+	exit 0
+fi
+
+CACHE="/tmp/ddcutil_buses"
+
+# Mit -r Cache neu aufbauen: brightness.sh -r 80
+if [[ $1 = "-r" ]]; then
+    rm -f "$CACHE"
+    shift
+fi
+
+if [[ ! -f "$CACHE" ]]; then
+	ddcutil detect --brief | grep -o 'i2c-[0-9]*' | cut -d- -f2 > "$CACHE"
+fi
+
+
+BUSES=($(cat "$CACHE"))
+
+# workaround to skip laptop monitor
+for ((i=1;i<${#BUSES[*]};i++)); do
+	ddcutil --bus=${BUSES[$i]} setvcp 10 $1
+done
+

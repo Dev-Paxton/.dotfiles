@@ -1,0 +1,61 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defvar
+  $var-name1 $var-value1)
+
+
+(defalias
+  ;; tap for caps lock, hold for left control
+  cap (tap-hold 200 200 caps lctl)
+)
+
+(defvar
+  tap-repress-timeout 100
+  hold-timeout  200
+  tt $tap-repress-timeout
+  ht $hold-timeout
+
+  hrmFirst lmet
+  hrmSecond lctl
+  hrmThird lalt
+)
+
+(defalias
+  switchToArrow (layer-while-held HomeRowArrows)
+
+  hrmA (tap-hold $tt $ht a @switchToArrow)
+  hrmS (tap-hold $tt $ht s $hrmThird)
+  hrmD (tap-hold $tt $ht d $hrmSecond)
+  hrmF (tap-hold $tt $ht f $hrmFirst)
+  
+  hrmJ (tap-hold $tt $ht j $hrmFirst)
+  hrmK (tap-hold $tt $ht k $hrmSecond)
+  hrmL (tap-hold $tt $ht l $hrmThird)
+  hrm; (tap-hold $tt $ht ; @switchToArrow)
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt menu rctl
+)
+
+(deflayer HomeRowMods
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc @hrmA @hrmS @hrmD @hrmF g h @hrmJ @hrmK @hrmL @hrm; '  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt menu rctl
+)
+
+(deflayer HomeRowArrows
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a   home pgdn pgup end  lft  down  up right  ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt menu rctl
+)

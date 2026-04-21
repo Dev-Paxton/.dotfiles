@@ -1,0 +1,4 @@
+#!/bin/bash
+hyprctl keyword monitor "eDP-1, disable"
+killall waybar
+hyprctl dispatch exec waybar
